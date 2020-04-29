@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { ActivityIndicator, Text, ViewPropTypes, SafeAreaView} from 'react-native'
+import { ActivityIndicator, Text, ViewPropTypes, StyleSheet, SafeAreaView} from 'react-native'
 import {fetchImages} from '../utils/api'
 import CardList from '../components/CardList'
 
@@ -40,7 +40,7 @@ export default class Feed extends Component {
         const { style, commentsForItem, onPressComments, } = this.props
         const { loading, error, items } = this.state
         if(loading) {
-            return <ActivityIndicator size={'large'} />
+            return <ActivityIndicator size={'large'} style={StyleSheet.absoluteFill} />
         }
         if (error) {
             return<Text>Error...</Text>
